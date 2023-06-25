@@ -27,6 +27,7 @@ function DeleteEntregas({entregasIds}) {
       } else {
         alert(Message);
         setEntregas(0);
+        setStatus('');
       }
 
     }
