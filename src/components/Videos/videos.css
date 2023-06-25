@@ -1,0 +1,33 @@
+body{
+  background-color: rgb(82, 88, 86);
+}
+.form {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 15%;
+  border: 1px solid black;
+  background-image: url("../../assets/image/drone.avif");
+  background-size:100%;
+  width: 500px;
+  height: 300px;
+  padding: 50px;
+  border-radius: 5px;
+}
+.div-class{
+  display: flex;
+  width: 100%;
+  height: 100vh; /* Note a medida */
+  /* background-color: rgb(160, 164, 167); */
+  background-image: url('../../assets/image/dronreId.avif');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+input:focus{
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}
+.input-group-text{
+  margin-bottom: 10px;
+}

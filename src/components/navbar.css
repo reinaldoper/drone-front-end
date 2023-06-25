@@ -1,0 +1,251 @@
+
+
+body {
+  background-color: #b9b3b3;
+}
+
+.elementos {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  text-align: center;
+  list-style: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: rgb(12, 3, 3);
+  font-weight: 500;
+  height: 220px;
+  font-size: 20px;
+  font-family: 'Verdana';
+  /* background-color: #666666; */
+  background-color: rgba(61, 51, 51, 0.212);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(13.5px);
+  -webkit-backdrop-filter: blur(13.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+
+.tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.div-tec {
+  margin-left: 20px;
+}
+
+.title {
+  display: flex;
+  margin-top: 10px;
+  font-size: 15px;
+  margin-left: 50px;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.img-src {
+  width: 100px;
+  /* filter: blur(0px); */
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+#projetos {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+  background-color: #726c6c;
+  color: #f5f0f0;
+}
+
+.map-img {
+  width: 300px;
+  height: 300px;
+  border-radius: 8px;
+  margin-left: 50px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0.8);
+}
+
+.map-img:hover {
+  box-shadow: 2px 2px 2px 1px rgb(104, 47, 54);
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.image-projetos {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  margin-left: 10%;
+}
+
+.sobre {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20%;
+  margin-top: 50px;
+  text-align: justify;
+  width: 60%;
+  font-style: oblique;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.img {
+  width: 50%;
+  height: 60vb;
+  margin-left: 20%;
+  border-radius: 8px;
+  margin-top: 10px;
+  filter: brightness(120%);
+  filter: contrast(110%);
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 450px) {
+  .image-projetos {
+    margin-left: 0px;
+  }
+}
+
+/* .copyright {
+  text-align: center;
+  margin-top: 10%;
+  color: rgb(54, 58, 58);
+  font-size: 24px;
+} */
+.container-img {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #726c6c;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #212423;
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+.caption {
+  color: #ee0410;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 200px;
+  padding: 1px 1px;
+  height: 1000px;
+  background-color: #D3D3D3;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .sidebar a {
+    float: left;
+  }
+
+  div.content {
+    margin-left: 0;
+  }
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+
+  .img {
+    width: 50%;
+    height: 80px;
+    margin-left: 30%;
+    border-radius: 8px;
+    margin-top: 10px;
+    filter: brightness(120%);
+    filter: contrast(110%);
+    margin-bottom: 10px;
+  }
+}
+
+.img-carrosel {
+  width: 380px;
+  height: 160px;
+}
+.img:hover {
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.images {
+  display: flex;
+  flex-direction: column;
+  margin-left: 80%;
+  margin-top: 40px;
+}
+
+footer {
+  height: 50px;
+  margin-top: -50px;
+}
+
+.button {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  margin-top: 250px;
+}
+
+.button img {
+  display: flex;
+  width: 150px;
+  height: 60px;
+  margin: auto;
+}
+
+h4 {
+  display: flex;
+  margin-left: 44%;
+}

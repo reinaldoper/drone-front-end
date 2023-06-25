@@ -1,0 +1,64 @@
+.div-h1{
+  display: flex;
+  justify-content: center;
+}
+.div-details{
+  display: flex;
+  justify-content:space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: #bbb7b7;
+  padding: 30px;
+}
+.drone{
+  display: flex;
+  justify-content: center;
+  margin-left: 15%;
+  width: 70%;
+  
+}
+
+details>summary {
+  font-size: larger;
+  list-style: none;
+}
+summary::-webkit-details-marker {
+  display: none
+}
+/* Coloca a uma nova seta na direita por causa do pseudo-elemento ::after */
+summary::after {
+  content: ' ►';
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+
+/* modifica a seta pra baixo quando clicar */
+details[open] summary:after {
+  content: " ▼";
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+
+/* Animação */
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+.div-li{
+  background-color: aliceblue;
+  padding: 20px;
+  margin-bottom: 5px;
+}
+ol{
+  list-style: none;
+}
+.videos{
+  width: 80px;
+  height: 30px;
+}
