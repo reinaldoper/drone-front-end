@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { videos, deleteVideos } from '../../service/reducer';
 import { useEffect, useState } from 'react';
 import './videos.css';
+import { showAlert, showAlertSucces } from '../../service/alerts/alert';
 
 function Videos({ videosId }) {
   const [nomeArquivo, setNomeArquivo] = useState('');
@@ -31,12 +32,12 @@ function Videos({ videosId }) {
       body: JSON.stringify(result),
     };
     const { Message } = await videos(options);
-    alert(Message);
+    showAlertSucces('success', Message);
     setNomeArquivo('');
   }
   const handleDelete = async () => {
     if (remuve === 0) {
-      alert("Faltam dados!");
+      showAlert('Error', 'Faltam dados!!!');
     } else {
       const options = {
         method: 'DELETE',
@@ -49,9 +50,9 @@ function Videos({ videosId }) {
       };
       const { Message, error } = await deleteVideos(options, remuve);
       if (error) {
-        alert(error);
+        showAlert('Error', error);
       } else {
-        alert(Message);
+        showAlertSucces('success', Message);
         setRemuve(0);
       }
 

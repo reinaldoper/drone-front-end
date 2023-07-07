@@ -3,6 +3,7 @@ import Navbar from "../Navbar";
 import PropTypes from 'prop-types';
 import { deleteEntregas, putStatus } from "../../service/reducer";
 import { useState } from "react";
+import { showAlert, showAlertSucces } from '../../service/alerts/alert';
 
 function DeleteEntregas({entregasIds}) {
   const [entregas, setEntregas] = useState(0);
@@ -10,7 +11,7 @@ function DeleteEntregas({entregasIds}) {
 
   const handleDelete = async () => {
     if (entregas === 0) {
-      alert("Faltam dados!");
+      showAlert('Error', 'Faltam dados!!!');
     } else {
       const options = {
         method: 'DELETE',
@@ -23,9 +24,9 @@ function DeleteEntregas({entregasIds}) {
       };
       const { Message, error } = await deleteEntregas(options, entregas);
       if (error) {
-        alert(error);
+        showAlert('Error', error);
       } else {
-        alert(Message);
+        showAlertSucces('success', Message);
         setEntregas(0);
         setStatus('');
       }
@@ -34,7 +35,7 @@ function DeleteEntregas({entregasIds}) {
   }
   const handleStatus = async () => {
     if (entregas === 0 || status === "") {
-      alert("Faltam dados!");
+      showAlert('Error', 'Faltam dados!!!');
     } else {
       const options = {
         method: 'PUT',
@@ -47,9 +48,9 @@ function DeleteEntregas({entregasIds}) {
       };
       const { Message, error } = await putStatus(options, entregas, status);
       if (error) {
-        alert(error);
+        showAlert('Error', error);
       } else {
-        alert(Message);
+        showAlertSucces('success', Message);
         setStatus('');
       }
 

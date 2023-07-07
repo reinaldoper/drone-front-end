@@ -2,7 +2,8 @@ import { connect } from "react-redux"
 import PropTypes from 'prop-types'
 import { useState, useEffect } from 'react';
 import { entregas } from '../../service/reducer';
-import Navbar from "../Navbar"
+import Navbar from "../Navbar";
+import { showAlert, showAlertSucces } from '../../service/alerts/alert';
 
 function Entregas() {
   const [status, setStatus] = useState('');
@@ -29,9 +30,9 @@ function Entregas() {
     };
     const { Message, error } = await entregas(options);
     if (error) {
-      alert(error);
+      showAlert('Error', error);
     } else {
-      alert(Message);
+      showAlertSucces('success', Message);
       setStatus('');
       setDroneId(0);
       setVideoId(0);

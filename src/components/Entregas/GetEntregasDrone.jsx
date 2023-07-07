@@ -3,6 +3,7 @@ import { getEntregasDrone } from "../../service/reducer";
 import PropTypes from 'prop-types';
 import { useState } from "react";
 import Navbar from "../Navbar";
+import { showAlert } from '../../service/alerts/alert';
 
 function GetEntregasDrone() {
   const [entregas, setEntregas] = useState([]);
@@ -19,7 +20,7 @@ function GetEntregasDrone() {
     };
     const result = await getEntregasDrone(options, id);
     if (result.error){
-      alert(result.error);
+      showAlert('Error', result.error);
       setEntregas([]);
     } else {
     setEntregas(result);

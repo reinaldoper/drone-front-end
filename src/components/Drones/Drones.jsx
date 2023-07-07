@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { drones, deleteDrones } from '../../service/reducer';
 import './drone.css';
+import { showAlert, showAlertSucces } from '../../service/alerts/alert';
 
 function Drones({ dronesId }) {
   const [latitude, setLatitude] = useState("");
@@ -20,7 +21,7 @@ function Drones({ dronesId }) {
 
   const handleChange = async () => {
     if (latitude.length === 0 || longitude.length === 0) {
-      alert("Faltam dados!");
+      showAlert('Error', 'Faltam dados!!!');
     } else {
       const result = {
         latitude,
@@ -37,7 +38,7 @@ function Drones({ dronesId }) {
         body: JSON.stringify(result),
       };
       const { Message } = await drones(options);
-      alert(Message);
+      showAlertSucces('success', Message);
       setLatitude('');
       setLongitude('');
     }
@@ -46,7 +47,7 @@ function Drones({ dronesId }) {
 
   const handleDelete = async () => {
     if (seller === 0) {
-      alert("Faltam dados!");
+      showAlert('Error', 'Faltam dados!!!');
     } else {
       const options = {
         method: 'DELETE',
@@ -59,9 +60,9 @@ function Drones({ dronesId }) {
       };
       const { Message, error } = await deleteDrones(options, seller);
       if (error) {
-        alert(error);
+        showAlert('Error', error);
       } else {
-        alert(Message);
+        showAlertSucces('success', Message);
         setSeller(0);
       }
 
